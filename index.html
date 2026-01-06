@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HAMEED BROTHER'S PESTICIDES - Professional crop protection solutions for farmers and distributors. Quality insecticides, herbicides, and fungicides.">
+    <meta name="keywords" content="pesticides, agriculture, crop protection, insecticides, herbicides, fungicides, farming, HBP">
+    <title>HAMEED BROTHER'S PESTICIDES | HBP | Crop Protection Solutions</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles & Animations -->
+    <style>
+        :root {
+            --hbp-green: #1a5f23;
+            --hbp-green-dark: #0e3d13;
+            --hbp-brown: #5d4037;
+            --hbp-brown-light: #8d6e63;
+            --hbp-white: #ffffff;
+            --hbp-off-white: #f8faf5;
+        }
+
+        /* Base Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            background-color: var(--hbp-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            color: var(--hbp-green-dark);
+        }
+
+        .text-hbp-green { color: var(--hbp-green); }
+        .bg-hbp-green { background-color: var(--hbp-green); }
+        .bg-hbp-green-dark { background-color: var(--hbp-green-dark); }
+        .text-hbp-brown { color: var(--hbp-brown); }
+        .bg-hbp-brown { background-color: var(--hbp-brown); }
+
+        /* Logo Placeholder Styling */
+        .logo-container {
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border: 2px solid var(--hbp-green);
+            padding: 5px 10px;
+            color: var(--hbp-green);
+            display: inline-block;
+        }
+
+        /* Hero Section Background */
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Parallax effect */
+        }
+
+        /* Nav Links Hover Effect */
+        .nav-link {
+            position: relative;
+            padding-bottom: 2px;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--hbp-green);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Button Styles */
+        .btn-hbp {
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .btn-hbp:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        .btn-primary {
+            background-color: var(--hbp-green);
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: var(--hbp-green-dark);
+        }
+        .btn-outline {
+            border: 2px solid var(--hbp-green);
+            color: var(--hbp-green);
+            background: transparent;
+        }
+        .btn-outline:hover {
+            background-color: var(--hbp-green);
+            color: white;
+        }
+
+        /* Card Styles */
+        .hbp-card {
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e5e7eb;
+            background: white;
+            overflow: hidden;
+        }
+        .hbp-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-color: var(--hbp-green);
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Contact Form Focus */
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--hbp-green);
+            box-shadow: 0 0 0 3px rgba(26, 95, 35, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#home" class="logo-container text-xl flex items-center gap-2">
+                <i class="fas fa-leaf text-hbp-green"></i>
+                <span>HBP</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8 font-medium text-gray-700">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About Us</a>
+                <a href="#products" class="nav-link">Products</a>
+                <a href="#why-us" class="nav-link">Why Choose Us</a>
+                <a href="#contact" class="btn-hbp btn-primary px-5 py-2 rounded-full">Contact Us</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-hbp-green-dark text-2xl focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full left-0 shadow-lg">
+            <div class="flex flex-col px-4 py-4 space-y-4 text-center">
+                <a href="#home" class="mobile-link text-gray-700 font-medium">Home</a>
+                <a href="#about" class="mobile-link text-gray-700 font-medium">About Us</a>
+                <a href="#products" class="mobile-link text-gray-700 font-medium">Products</a>
+                <a href="#why-us" class="mobile-link text-gray-700 font-medium">Why Choose Us</a>
+                <a href="#contact" class="text-white bg-hbp-green px-4 py-2 rounded">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero-bg text-white py-24 md:py-32 flex items-center">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl mb-4 font-bold drop-shadow-lg animate-fade-in-up">
+                Protecting Crops, <br>Enriching Lives
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-gray-200 font-light">
+                Trusted partners in agriculture. High-quality pesticides and crop protection solutions for modern farmers.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#products" class="btn-hbp btn-primary px-8 py-4 rounded-lg text-lg">
+                    <i class="fas fa-seedling mr-2"></i> View Products
+                </a>
+                <a href="#contact" class="btn-hbp btn-outline px-8 py-4 rounded-lg text-lg bg-white bg-opacity-10 hover:bg-opacity-20 border-white text-white">
+                    <i class="fas fa-phone-alt mr-2"></i> Contact Us
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <!-- Image/Visual -->
+                <div class="md:w-1/2">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Agriculture Expertise" class="w-full h-80 object-cover transform hover:scale-105 transition duration-700">
+                        <div class="absolute bottom-0 left-0 w-full h-2 bg-hbp-green"></div>
+                    </div>
+                </div>
+                
+                <!-- Content -->
+                <div class="md:w-1/2">
+                    <span class="text-hbp-green font-bold uppercase tracking-wider text-sm">Who We Are</span>
+                    <h2 class="text-3xl md:text-4xl mb-6 mt-2">HAMEED BROTHER'S PESTICIDES</h2>
+                    <p class="text-gray-600 mb-4 text-lg leading-relaxed">
+                        Established with a vision to empower the farming community, HBP has been a cornerstone in agricultural solutions. We understand the challenges farmers face daily—from pests to unpredictable weather.
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Our commitment is to provide <strong>safe, effective, and affordable</strong> crop protection products that ensure maximum yield and sustainability. We are not just a supplier; we are your partners in growth.
+                    </p>
+                    <ul class="space-y-3 text-gray-700 mb-6">
+                        <li><i class="fas fa-check-circle text-hbp-green mr-2"></i> Decades of Industry Experience</li>
+                        <li><i class="fas fa-check-circle text-hbp-green mr-2"></i> Farmer-First Approach</li>
+                        <li><i class="fas fa-check-circle text-hbp-green mr-2"></i> Quality Assured Products</li>
+                    </ul>
+                    <a href="#why-us" class="text-hbp-green font-bold hover:underline decoration-2 underline-offset-4">
+                        Learn more about our commitment <i class="fas fa-arrow-right ml-1 text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-hbp-brown font-bold uppercase tracking-wider text-sm">Our Solutions</span>
+                <h2 class="text-3xl md:text-4xl mt-2 mb-4">Product Categories</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Effective solutions tailored to protect your crops at every stage of growth.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Insecticides -->
+                <div class="hbp-card p-8 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-green-100 text-hbp-green rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-bug text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 text-hbp-green-dark">Insecticides</h3>
+                    <p class="text-gray-600 mb-6 flex-grow">Potent formulas to eliminate sucking and boring pests, protecting the vital parts of your crops.</p>
+                    <button onclick="openWhatsApp('Insecticides Inquiry')" class="text-sm font-bold text-hbp-green hover:bg-green-50 px-4 py-2 rounded transition">Inquire via WhatsApp</button>
+                </div>
+
+                <!-- Herbicides -->
+                <div class="hbp-card p-8 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-green-100 text-hbp-green rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-slash text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 text-hbp-green-dark">Herbicides</h3>
+                    <p class="text-gray-600 mb-6 flex-grow">Targeted weed control solutions to ensure your crops get all the nutrients without competition.</p>
+                    <button onclick="openWhatsApp('Herbicides Inquiry')" class="text-sm font-bold text-hbp-green hover:bg-green-50 px-4 py-2 rounded transition">Inquire via WhatsApp</button>
+                </div>
+
+                <!-- Fungicides -->
+                <div class="hbp-card p-8 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-green-100 text-hbp-green rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-shield-virus text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 text-hbp-green-dark">Fungicides</h3>
+                    <p class="text-gray-600 mb-6 flex-grow">Advanced protection against fungal diseases that can drastically reduce crop quality and yield.</p>
+                    <button onclick="openWhatsApp('Fungicides Inquiry')" class="text-sm font-bold text-hbp-green hover:bg-green-50 px-4 py-2 rounded transition">Inquire via WhatsApp</button>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <p class="text-gray-500 italic">* We also offer custom solutions for specific crop needs. Contact us for details.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-us" class="py-20 bg-hbp-green-dark text-white relative overflow-hidden">
+        <!-- Decorative Background Shapes -->
+        <div class="absolute top-0 left-0 w-32 h-32 bg-white opacity-5 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full translate-x-1/2 translate-y-1/2"></div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold">Why Farmers Trust HBP</h2>
+                <p class="text-green-200 mt-2">We stand on three pillars of excellence</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Reliability -->
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-xl border border-white border-opacity-20">
+                    <i class="fas fa-handshake text-4xl text-hbp-brown mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-3">Reliable Products</h3>
+                    <p class="text-gray-300">Every batch undergoes strict quality checks. When you buy HBP, you buy reliability that stands the test of time.</p>
+                </div>
+
+                <!-- Farmer Support -->
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-xl border border-white border-opacity-20">
+                    <i class="fas fa-user-friends text-4xl text-hbp-brown mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-3">Farmer Support</h3>
+                    <p class="text-gray-300">We don't just sell products. Our team provides guidance on application, dosage, and timing to maximize benefits.</p>
+                </div>
+
+                <!-- Quality Assurance -->
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-xl border border-white border-opacity-20">
+                    <i class="fas fa-certificate text-4xl text-hbp-brown mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-3">Quality Assurance</h3>
+                    <p class="text-gray-300">Committed to sustainable agriculture. Our products are effective while ensuring safety for crops and soil.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-12">
+                
+                <!-- Contact Info & WhatsApp -->
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
+                    <p class="text-gray-600 mb-8">Ready to boost your crop yield? Contact us directly or send us a message.</p>
+
+                    <div class="space-y-6">
+                        <!-- Address Info -->
+                        <div class="flex items-start gap-4">
+                            <div class="bg-hbp-green text-white w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-hbp-green-dark">Business Address</h4>
+                                <p class="text-gray-600">[Insert Local Office Address Here], Pakistan</p>
+                            </div>
+                        </div>
+
+                        <!-- Phone Info -->
+                        <div class="flex items-start gap-4">
+                            <div class="bg-hbp-green text-white w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-hbp-green-dark">Call Us</h4>
+                                <p class="text-gray-600">[Insert Main Landline/Mobile]</p>
+                            </div>
+                        </div>
+
+                        <!-- WhatsApp Contact Block -->
+                        <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100 mt-6">
+                            <h4 class="font-bold text-lg text-hbp-green-dark mb-4 flex items-center gap-2">
+                                <i class="fab fa-whatsapp text-green-500"></i> Chat on WhatsApp
+                            </h4>
+                            <p class="text-sm text-gray-500 mb-4">Quick response guaranteed for inquiries and orders.</p>
+                            
+                            <div class="flex flex-col gap-3">
+                                <a href="https://wa.me/923045285983?text=Hello%20HBP,%20I%20am%20interested%20in%20your%20products." target="_blank" class="flex items-center justify-between bg-gray-50 hover:bg-green-50 border border-gray-200 hover:border-green-400 p-3 rounded transition-all">
+                                    <span class="font-medium text-gray-700">Jamil (Sales)</span>
+                                    <span class="text-green-600 text-sm font-bold">Chat Now <i class="fas fa-arrow-right ml-1"></i></span>
+                                </a>
+                                <a href="https://wa.me/923041880344?text=Hello%20HBP,%20I%20am%20interested%20in%20your%20products." target="_blank" class="flex items-center justify-between bg-gray-50 hover:bg-green-50 border border-gray-200 hover:border-green-400 p-3 rounded transition-all">
+                                    <span class="font-medium text-gray-700">Najeeb (Support)</span>
+                                    <span class="text-green-600 text-sm font-bold">Chat Now <i class="fas fa-arrow-right ml-1"></i></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+             
